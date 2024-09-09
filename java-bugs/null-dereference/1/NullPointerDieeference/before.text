@@ -1,7 +1,0 @@
-String s = null ;
-if (today is monday){
-    s = "Monday" ;
-else if (today is tuesday){
-    s = "Tuesday" ;
-}
-System.out.println(s.length()); //Will throw a null pointer if today is not monday or tuesday.
