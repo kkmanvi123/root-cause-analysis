@@ -1,0 +1,4 @@
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+String value = map.get("key2");
+System.out.println(value.length()); 
