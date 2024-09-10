@@ -1,0 +1,9 @@
+private static List<Object> objectList = new ArrayList<>();
+public static void main(String[] args) {
+    while (true) {
+        if (objectList.size() > 1000) {  
+            objectList.clear();  
+        }
+        objectList.add(new Object());
+    }
+}
