@@ -1,0 +1,6 @@
+private static List<Object> objectList = new ArrayList<>();
+public static void main(String[] args) {
+    while (true) {
+        objectList.add(new Object());  
+    }
+}
