@@ -1,7 +1,8 @@
 public class StringLeaker 
 {
     private final String muchSmallerString;
-    public StringLeaker() {
+    public StringLeaker()
+    {
         String veryLongString = "We hold these truths to be self-evident...";
         this.muchSmallerString = new String(veryLongString.substring(0, 1));
     }
