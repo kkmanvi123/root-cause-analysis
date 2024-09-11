@@ -1,0 +1,20 @@
+package com.example.event;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventManager {
+    private List<Runnable> listeners = new ArrayList<>();
+
+    public void addListener(Runnable eventListener) {
+        listeners.add(eventListener);
+        // Listener is added but never removed, causing memory to be retained
+    }
+
+    public void triggerEvent() {
+        for (Runnable listener : listeners) {
+            listener.run();
+        }
+    }
+}
+

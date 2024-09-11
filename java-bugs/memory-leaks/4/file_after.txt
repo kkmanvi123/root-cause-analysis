@@ -1,0 +1,22 @@
+package com.example.file;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileHandler {
+    private FileInputStream fileStream;
+
+    public void readFile(String fileName) throws IOException {
+        try {
+            fileStream = new FileInputStream(fileName);
+            int data = fileStream.read();
+            System.out.println("Read data: " + data);
+        } finally {
+            // Fix: Ensure the resource is closed
+            if (fileStream != null) {
+                fileStream.close();
+            }
+        }
+    }
+}
+

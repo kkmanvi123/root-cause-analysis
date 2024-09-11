@@ -1,0 +1,10 @@
+{
+  "bug_class": "RESOURCE_LEAK",
+  "kind": "WARNING",
+  "bug_type": "MEMORY_LEAK",
+  "qualifier": "Event listener `eventListener` added on line 20 is never removed, causing a memory leak.",
+  "severity": "HIGH",
+  "visibility": "user",
+  "line": 40
+}
+

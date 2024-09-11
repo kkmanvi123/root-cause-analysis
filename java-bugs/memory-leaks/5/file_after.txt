@@ -1,0 +1,24 @@
+package com.example.event;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventManager {
+    private List<Runnable> listeners = new ArrayList<>();
+
+    public void addListener(Runnable eventListener) {
+        listeners.add(eventListener);
+    }
+
+    public void removeListener(Runnable eventListener) {
+        // Fix: Provide a method to deregister listeners and prevent memory leak
+        listeners.remove(eventListener);
+    }
+
+    public void triggerEvent() {
+        for (Runnable listener : listeners) {
+            listener.run();
+        }
+    }
+}
+

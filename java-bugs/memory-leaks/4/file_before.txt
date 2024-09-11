@@ -1,0 +1,17 @@
+package com.example.file;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileHandler {
+    private FileInputStream fileStream;
+
+    public void readFile(String fileName) throws IOException {
+        fileStream = new FileInputStream(fileName);
+        // Read from fileStream but forget to close it, causing a memory leak
+        int data = fileStream.read();
+        System.out.println("Read data: " + data);
+        // Memory leak: fileStream not closed
+    }
+}
+

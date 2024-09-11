@@ -1,0 +1,7 @@
+public void readFile(String fileName) throws IOException {
+    fileStream = new FileInputStream(fileName);
+    int data = fileStream.read();
+    System.out.println("Read data: " + data);
+    // Bug: fileStream is not closed, causing a memory leak
+}
+

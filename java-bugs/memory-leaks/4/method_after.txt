@@ -1,0 +1,13 @@
+public void readFile(String fileName) throws IOException {
+    try {
+        fileStream = new FileInputStream(fileName);
+        int data = fileStream.read();
+        System.out.println("Read data: " + data);
+    } finally {
+        // Fix: Ensure the file stream is closed
+        if (fileStream != null) {
+            fileStream.close();
+        }
+    }
+}
+

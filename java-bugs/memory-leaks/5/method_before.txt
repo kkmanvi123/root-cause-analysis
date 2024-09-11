@@ -1,0 +1,5 @@
+public void addListener(Runnable eventListener) {
+    listeners.add(eventListener);
+    // Bug: Listener is added but not removed, causing memory leak
+}
+

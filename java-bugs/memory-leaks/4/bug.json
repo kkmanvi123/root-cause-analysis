@@ -1,0 +1,10 @@
+{
+  "bug_class": "RESOURCE_LEAK",
+  "kind": "WARNING",
+  "bug_type": "MEMORY_LEAK",
+  "qualifier": "File input stream `fileStream` opened at line 25 is not closed, leading to a potential memory leak.",
+  "severity": "MEDIUM",
+  "visibility": "user",
+  "line": 35
+}
+

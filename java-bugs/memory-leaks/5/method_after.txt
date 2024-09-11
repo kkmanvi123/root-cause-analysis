@@ -1,0 +1,9 @@
+public void addListener(Runnable eventListener) {
+    listeners.add(eventListener);
+}
+
+public void removeListener(Runnable eventListener) {
+    // Fix: Deregister listener to avoid memory leak
+    listeners.remove(eventListener);
+}
+
