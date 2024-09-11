@@ -1,0 +1,19 @@
+public void processData() {
+    // Fix: Ensure `dataList` is always initialized
+    initializeData();
+    
+    if (dataList != null) {
+        for (String data : dataList) {
+            System.out.println("Processing: " + data);
+        }
+    } else {
+        System.out.println("No data to process.");
+    }
+}
+
+private void initializeData() {
+    dataList = new ArrayList<>();  // Always initialize dataList
+    if (Math.random() > 0.5) {
+        dataList.add("Sample Data");
+    }
+}

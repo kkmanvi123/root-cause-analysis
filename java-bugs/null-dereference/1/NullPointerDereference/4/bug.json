@@ -1,0 +1,10 @@
+{
+  "bug_class": "PROVER",
+  "kind": "ERROR",
+  "bug_type": "NULL_DEREFERENCE",
+  "qualifier": "object `fileStream` last assigned on line 30 could be null and is dereferenced at line 33.",
+  "severity": "HIGH",
+  "visibility": "user",
+  "line": 33
+}
+

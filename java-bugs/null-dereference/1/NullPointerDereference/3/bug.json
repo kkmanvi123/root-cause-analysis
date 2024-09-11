@@ -1,0 +1,10 @@
+{
+  "bug_class": "PROVER",
+  "kind": "ERROR",
+  "bug_type": "NULL_DEREFERENCE",
+  "qualifier": "object `dataList` last assigned on line 45 could be null and is dereferenced at line 47.",
+  "severity": "HIGH",
+  "visibility": "user",
+  "line": 47
+}
+

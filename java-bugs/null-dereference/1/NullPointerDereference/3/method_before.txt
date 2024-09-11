@@ -1,0 +1,17 @@
+public void processData() {
+    // Bug: `dataList` could be null if initializeData is not called
+    initializeData();
+    
+    for (String data : dataList) {  // Potential null dereference here
+        System.out.println("Processing: " + data);
+    }
+}
+
+private void initializeData() {
+    if (Math.random() > 0.5) {
+        dataList = new ArrayList<>();  // Only initialized sometimes
+        dataList.add("Sample Data");
+    }
+    // If this method does not initialize dataList, it will remain null
+}
+
