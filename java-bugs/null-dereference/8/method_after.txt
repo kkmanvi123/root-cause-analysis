@@ -1,0 +1,8 @@
+public void displayUserInfo() {
+    // Fix: Check for null before dereferencing currentUser
+    if (currentUser != null) {
+        System.out.println("Username: " + currentUser.getUsername());
+    } else {
+        System.out.println("No user is currently logged in.");
+    }
+}
