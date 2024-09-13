@@ -1,0 +1,33 @@
+package com.example.nulldereference;
+
+public class UserManager {
+    private User currentUser;
+
+    public void login(String username, String password) {
+        if (username.equals("admin") && password.equals("password123")) {
+            currentUser = new User(username);
+        }
+        // currentUser remains null if login credentials are incorrect
+    }
+
+    public void displayUserInfo() {
+        // Fix: Check for null before dereferencing currentUser
+        if (currentUser != null) {
+            System.out.println("Username: " + currentUser.getUsername());
+        } else {
+            System.out.println("No user is currently logged in.");
+        }
+    }
+
+    private class User {
+        private String username;
+
+        public User(String username) {
+            this.username = username;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+    }
+}
