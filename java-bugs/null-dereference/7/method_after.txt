@@ -1,0 +1,12 @@
+public void openFile(String fileName) throws IOException {
+    if (fileName != null && !fileName.isEmpty()) {
+        fileStream = new FileInputStream(fileName);
+    }
+    
+    // Fix: Check for null before dereferencing fileStream
+    if (fileStream != null) {
+        fileStream.read();
+    } else {
+        System.out.println("File stream is not initialized.");
+    }
+}
