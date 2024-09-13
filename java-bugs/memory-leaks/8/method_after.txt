@@ -1,0 +1,14 @@
+public void addEventListener(EventListener listener) {
+    listeners.add(listener);
+}
+
+// Fix: Add method to remove event listeners
+public void removeEventListener(EventListener listener) {
+    listeners.remove(listener);
+}
+
+public void notifyListeners() {
+    for (EventListener listener : listeners) {
+        listener.onEvent();
+    }
+}
