@@ -1,0 +1,15 @@
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class TimerLeakExample {
+    public void startTimer() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Timer task");
+            }
+        }, 1000, 1000);
+        // Timer not canceled
+    }
+}
