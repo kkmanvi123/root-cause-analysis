@@ -1,0 +1,9 @@
+{
+  "bug_class": "PROVER",
+  "kind": "ERROR",
+  "bug_type": "NULL_DEREFERENCE",
+  "qualifier": "object `currentUser` could be null and is dereferenced at line 13.",
+  "severity": "HIGH",
+  "visibility": "user",
+  "line": 13
+}
