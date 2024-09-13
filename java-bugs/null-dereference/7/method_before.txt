@@ -1,0 +1,6 @@
+public void openFile(String fileName) throws IOException {
+    if (fileName != null && !fileName.isEmpty()) {
+        fileStream = new FileInputStream(fileName);
+    }
+    fileStream.read();  // Bug: Potential null dereference
+}
