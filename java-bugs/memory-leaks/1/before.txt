@@ -10,6 +10,5 @@ public class TimerLeakExample {
                 System.out.println("Timer task");
             }
         }, 1000, 1000);
-        // Timer not canceled
     }
 }
