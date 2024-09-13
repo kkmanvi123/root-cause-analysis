@@ -1,7 +1,14 @@
-String sortName;
-if (lastName != null && lastName.length() > 0) {
-   sortName = lastName;
+String s = null;
+if (today is monday) {
+    s = "Monday";
+} else if (today is tuesday) {
+    s = "Tuesday";
 } else {
-   sortName = null;
+    s = ""; // or some default value like "Unknown"
 }
-sortOptions.setSortField(sortName);
+
+if (s != null) {
+    System.out.println(s.length());
+} else {
+    System.out.println("String is null");
+}

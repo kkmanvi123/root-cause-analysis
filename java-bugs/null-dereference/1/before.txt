@@ -1,5 +1,7 @@
-String sortName = null;
-if (lastName != null && lastName.length() > 0) {
-   sortName = lastName;
+String s = null ;
+if (today is monday){
+    s = "Monday" ;
+else if (today is tuesday){
+    s = "Tuesday" ;
 }
-sortOptions.setSortField(sortName);
+System.out.println(s.length()); 
