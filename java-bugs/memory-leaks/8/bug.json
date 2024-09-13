@@ -1,0 +1,9 @@
+{
+  "bug_class": "MEMORY_LEAK",
+  "kind": "ERROR",
+  "bug_type": "EVENT_LISTENER_LEAK",
+  "qualifier": "Event listeners are added to the list but never removed, potentially causing a memory leak.",
+  "severity": "MEDIUM",
+  "visibility": "user",
+  "line": 10
+}
