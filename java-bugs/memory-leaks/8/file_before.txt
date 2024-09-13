@@ -1,0 +1,30 @@
+package com.example.memoryleak;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventManager {
+    private List<EventListener> listeners = new ArrayList<>();
+
+    public void addEventListener(EventListener listener) {
+        listeners.add(listener);
+    }
+
+    public void notifyListeners() {
+        for (EventListener listener : listeners) {
+            listener.onEvent();
+        }
+    }
+
+    // Bug: No method to remove event listeners
+}
+
+interface EventListener {
+    void onEvent();
+}
+
+class LongLivedObject implements EventListener {
+    public void onEvent() {
+        System.out.println("Event received");
+    }
+}
