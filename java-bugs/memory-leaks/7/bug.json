@@ -1,0 +1,9 @@
+{
+  "bug_class": "MEMORY_LEAK",
+  "kind": "ERROR",
+  "bug_type": "STATIC_COLLECTION_GROWTH",
+  "qualifier": "The static Map 'cache' grows indefinitely without any mechanism to remove entries.",
+  "severity": "HIGH",
+  "visibility": "user",
+  "line": 6
+}
