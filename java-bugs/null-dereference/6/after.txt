@@ -1,0 +1,18 @@
+public class Switch {
+    public void process(String action) {
+        if (action != null) {
+            switch (action) {
+                case "start":
+                    System.out.println("Starting...");
+                    break;
+                case "stop":
+                    System.out.println("Stopping...");
+                    break;
+                default:
+                    System.out.println("Unknown action");
+            }
+        } else {
+            System.out.println("Action is null");
+        }
+    }
+}
