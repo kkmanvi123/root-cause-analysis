@@ -1,0 +1,16 @@
+package com.example.nulldereference;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileHandler {
+    private FileInputStream fileStream;
+
+    public void openFile(String fileName) throws IOException {
+        if (fileName != null && !fileName.isEmpty()) {
+            fileStream = new FileInputStream(fileName);
+        }
+        // Bug: fileStream could be null if the fileName is null or empty
+        fileStream.read();  // Potential null dereference
+    }
+}
