@@ -2,8 +2,7 @@
 
 ## Project Description
 ### Purpose
-The goal of this project is to develop a machine learning model that classifies software program failures(bugs) by type, helping developers quickly identify the nature of the issue. By analyzing historical failure data, the model will detect patterns and correlations associated with specific bug categories, providing insights to guide debugging efforts and improve development efficiency. 
-
+The goal of this project was to develop a machine learning model that classifies software program failures (bugs) by type, helping developers quickly identify the nature of the issue. By analyzing historical failure data, the model detects patterns and correlations associated with specific bug categories, providing insights to guide debugging efforts and improve development efficiency. 
 
 ### Project Overview, Objectives and Goals
  The overview of the project is to create a machine learning model that finds the root cause for a software program failure(bug). This complex challenge offered our team the freedom to explore different approaches for solving the problem effectively. 
