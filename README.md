@@ -1,48 +1,122 @@
 # Root Cause Analysis for Cadence Design Systems
 
-## Project Description
-### Purpose
-The goal of this project was to develop a machine learning model that classifies software program failures (bugs) by type, helping developers quickly identify the nature of the issue. By analyzing historical failure data, the model detects patterns and correlations associated with specific bug categories, providing insights to guide debugging efforts and improve development efficiency. 
+## Project Overview
 
-### Project Overview, Objectives and Goals
- The overview of the project is to create a machine learning model that finds the root cause for a software program failure(bug). This complex challenge offered our team the freedom to explore different approaches for solving the problem effectively. 
-Our goal is to create a solution that can classify the failure type of a bug, identify the most suitable machine learning algorithm, and integrate the implementation into a user-friendly terminal-based tool. This project is critical as it addresses the significant time spent debugging software, a key issue for companies like Cadence Design Systems, where debugging faulty software is both time-sensitive and resource intensive. 
-Currently, engineers spend up to 70% of their time debugging code. Moreover, team-developed software often requires years of expertise for engineers to master. By simplifying the process of determining bug types from  code snippets, our project aims to significantly reduce debugging time, allowing developers to focus more on productive development tasks. 
+This project aims to develop a machine learning (ML) model to identify the root causes of software program failures (bugs). By analyzing historical failure data, the model uncovers patterns and correlations, enabling faster and more effective debugging processes. This work is critical for software development organizations like Cadence Design Systems, where debugging is both time-sensitive and resource-intensive. Engineers currently spend up to 70% of their time debugging, and team-developed software often requires years of expertise for mastery.
 
-### Objectives
-1. Understand and Define the Problem: Clearly analyze the scope and specifics of software failures and identify the key factors contributing to debugging challenges. 
-2. Determine the ML methodology: Evaluate and select the most appropriate machine learning approach to classify and address the root causes of bugs. 
-3. Break down the project into subtasks
+The goal is to create a solution that not only classifies bug failure types but also identifies the most effective ML algorithm to solve the problem. Additionally, the project incorporates this model into a user-friendly terminal-based tool to streamline its integration into developers' workflows. By significantly reducing debugging time, the project empowers engineers to focus more on innovative development tasks, enhancing productivity and customer satisfaction.
 
-### Methodology
+## Objectives
+1. **Understand and define the problem**: Clearly identify the goals and scope of root cause analysis.
+2. **Develop a machine learning model**: Create and optimize an ML model capable of accurately classifying bug types.
+3. **Select the best methodology**: Explore and compare various ML algorithms to identify the most effective approach.
+4. **Integrate with developer tools**: Build a model terminal for real-world usability and integration into debugging workflows.
 
+## Methodology
+
+### Data Understanding and Preparation
+- Initially, team-generated buggy and fixed code served as training data. However, scalability challenges led to adopting publicly available datasets,  such as the [Microsoft Inferred Bugs Dataset](https://github.com/microsoft/InferredBugs/tree/main).
+- Key steps included:
+  - Filtering buggy code for relevant features.
+  - Leveraging feature engineering to improve model performance.
+
+### Modeling and Evaluation
+- Models evaluated: Logistic Regression (baseline) and Random Forest (chosen model).
+- Random Forest excelled due to its ability to handle high-dimensional data and provide feature importance insights.
+- Evaluation metrics included accuracy, ROC-AUC, and confusion matrices.
+- Cross-validation (GridSearch and RandomSearch) helped refine hyperparameters for optimal performance.
+
+## Results
+- **Model Performance**: 
+  - Random Forest achieved an ROC-AUC of 92%, outperforming Logistic Regression at 71%.
+  - High true positive and true negative rates with a balanced error rate.
+- **Insights**:
+  - Features like resource allocation and mutable object usage were critical in predicting memory leaks and null dereference bugs.
+  - Precision-focused evaluation ensured high-confidence predictions, reducing developer time waste.
+
+## Potential Next Steps
+1. **Expand Bug Types**: Introduce more categories to enhance the model's versatility.
+2. **Increase Dataset Size**: Collect additional data for better generalizability and reduced misclassification.
+3. **Refine Feature Engineering**: Explore new features to differentiate bug types more effectively.
+4. **Specificity Improvements**: Add details like the line number or range where errors occur.
+5. **Process Iteration**: Continue refining data collection, feature selection, and terminal integration.
+
+## Business Impact
+This project addresses a critical pain point in software development: debugging. By reducing the time and effort needed for bug fixes, this model can significantly improve productivity for software engineers and enhance customer satisfaction.
 
 ### Potential Next Steps
 
+## Running the program.
 
-### Installation
-1.Download files: from the bttai-debugger folder in the GitHub Repository.
-Random_forest_model.pkl (the model from downloaded from google collab)
-debugger.py (python script that debugs using the model)
-PreparedStatementGenerator.java (the buggy code snippet in java to be predicted)
-2.Install Python: Ensure Python is installed on your system. 
-You can download it from python.org
-3. Organize Files: Place all the downloaded files in the same folder on your computer
-4.Open Command Prompt: Navigate to the folder containing the files using the cd command.
-cd C:\this\is\your\folderpath\
-5. Run the Program on the Terminal:
-Obtain the path for the .java file 
-Execute the following command in the terminal: 
-		py debugger.py C:\This\is\your\folderpath\PreparedStatementGenerator.java
-6. View the Output: The program will display the predicted bug type in the .java file. 
-Possible types include : Null Dereference, Resource Leak , and Thread Safety Violation.
-7. Test with Different Code Snippets: Remember that the code snippet must be in the code language JAVA. 
-Modify the content of the .java file with another code snippet.
- Save the file and repeat steps 4-6 to see the model's prediction for the updated snippet. 
+### Prerequisites
 
-### Contributing
-If you are looking to reproduce the project, then you can use the .ipynb model in the github repository once edited it should be downloaded as a .pkl file. The steps above should be followed to test the new model. 
-The original .ipynb Google Colab file should not be modified. A copy of the file should be made in order to use it. You can make suggestions and develop a better version or add more features to the copy of the .ipynb file. As mentioned if you want to test the new model you can follow the steps above. You can modify the .java file to have the code snippet of your preference to test the model. However the .py file should not be modified unless you add new features, add more bugs, or change the name of your .pkl file. The steps above will not work if the right information is not found inside of the .py file. 
+Before you begin, ensure you have the following installed on your system:
+
+- **Git**: [Download Git](https://git-scm.com/downloads)
+- **Python 3.x**: [Download Python](https://www.python.org/downloads/)
+- **Pip**: Comes bundled with Python 3.x
+
+### Installation Steps
+
+#### 1. Clone the Repository
+
+Start by cloning the repository to your local machine using Git. Open your terminal and execute:
+
+```bash
+git clone https://github.com/kkmanvi123/root-cause-analysis.git
+```
+
+#### 2. Navigate to the Project Directory
+
+Change your current directory to the cloned repository:
+
+```bash
+cd root-cause-analysis
+```
+
+#### 3. Install Python Dependencies
+
+Ensure you have all the required Python packages installed. Run the following command:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+#### 4. Run the Debugger
+   
+To execute the debugger, navigate to the bttai-debugger directory and run the debugger script. Replace <buggy-file.java> with the path to your actual Java file
+
+```bash
+cd bttai-debugger
+python3 debugger.py <buggy-file.java>
+```
+
+## Contributing
+
+### Reproducing the Project
+
+To successfully reproduce and extend this project, follow these guidelines:
+
+1. **Use the `.ipynb` file in the GitHub repository** to generate the model. After making your desired edits, download the model as a `.pkl` file. Follow the outlined steps to test the updated model.
+
+2. **Do not modify the original `.ipynb` Google Colab file.** Instead, create a copy of the file to make your changes. Use this copy to:
+   - Improve the existing functionality.
+   - Add new features.
+   - Refine the project further.
+
+3. **Testing the new model**:
+   - Follow the documented steps carefully.
+   - To customize test scenarios, modify the `.java` file with the code snippets of your choice.
+
+4. **Handling the `.py` file**:
+   - The `.py` file should remain unchanged unless you:
+     - Add new features.
+     - Include more bugs.
+     - Change the name of your `.pkl` file.
+   - If you make changes, ensure the `.py` file contains the correct information. The testing steps will not work as expected if the necessary information is missing or incorrect.
+
+By adhering to these instructions, you can reproduce and extend the project while maintaining compatibility with the existing workflow.
+
 
 ### License
 Purpose: State the licensing under which the project is released.
@@ -55,19 +129,21 @@ Resources Leveraged
 	Jira: Project management
 	Google Drive: File documentation management
 
-### Acknowledgements
-We've learned so much throughout this project, and we’re so thankful for everyone at Cadence Design Systems who shared their knowledge and guidance with us. Huge thanks to our amazing Challenge Advisors, Francoise Martinolle and Yosinori Watanabe, for always being there to support us and offer great advice.
-We’d also like to thank Break Through Tech and the Cornell Tech AI Program team for giving us this incredible opportunity. A special shoutout to our AI Studio TA, Kailey Bridgeman, for all her help and encouragement along the way.
-We’re so grateful for everything and everyone who’s been part of this journey—thank you!
+## Acknowledgements
 
-AI Studio Challenge Advisors (Cadence):
-Francoise Martinolle
-Yosinori Watanabe
-AI Studio TA (BTTAI):
-Kailey Bridgeman
-Fellow Studio Project Team (BTTAI):
-Sarah Goldman
-Manvi Kottakota
-Lee Mabhena
-Hema Motiani
-Alison Ramirez
+We have gained invaluable knowledge and experience throughout this project, and we are deeply thankful to everyone who contributed to our journey. 
+
+A special thank you to **Cadence Design Systems** for sharing their expertise and providing exceptional guidance. We extend our heartfelt gratitude to our incredible Challenge Advisors, **Francoise Martinolle** and **Yosinori Watanabe**, for their unwavering support and insightful advice.
+
+We also want to thank **Break Through Tech AI** and the **Cornell Tech AI Program** team for giving us this remarkable opportunity. A huge shoutout to our AI Studio TA, **Kailey Bridgeman**, for her encouragement, assistance, and dedication.
+
+Finally, we’re grateful for the collaboration and camaraderie of our fellow Studio Project Team members. This journey wouldn’t have been the same without:
+
+- **Sarah Goldman**
+- **Manvi Kottakota**
+- **Lee Mabhena**
+- **Hema Motiani**
+- **Alison Ramirez**
+
+To everyone who has been part of this experience—thank you for making it unforgettable!
+
