@@ -44,8 +44,6 @@ The goal is to create a solution that not only classifies bug failure types but 
 ## Business Impact
 This project addresses a critical pain point in software development: debugging. By reducing the time and effort needed for bug fixes, this model can significantly improve productivity for software engineers and enhance customer satisfaction.
 
-### Potential Next Steps
-
 ## Running the program.
 
 ### Prerequisites
@@ -122,12 +120,14 @@ By adhering to these instructions, you can reproduce and extend the project whil
 Purpose: State the licensing under which the project is released.
 Suggested Content: A short statement about the license, typically linking to the full license file.
 Credits and Acknowledgments
-Resources Leveraged
-	Github Repository for data: Microsoft Inferred Bugs
-	Google Colab: To train and develop the model
-	Scikit learn, Pandas, numpy
-	Jira: Project management
-	Google Drive: File documentation management
+
+
+## Resources Leveraged
+- Github Repository for data: Microsoft Inferred Bugs
+- Google Colab: To train and develop the model
+- Scikit learn, Pandas, numpy
+- Jira: Project management
+- Google Drive: File documentation management
 
 ## Acknowledgements
 
