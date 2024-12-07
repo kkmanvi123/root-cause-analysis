@@ -147,3 +147,5 @@ Finally, we’re grateful for the collaboration and camaraderie of our fellow St
 
 To everyone who has been part of this experience—thank you for making it unforgettable!
 
+**Project README File**: [Team AI Project README](https://docs.google.com/document/d/1X5YY3s5BmaMiMwrdpNidn6r5Yt225q2N7V7UnbMHvIY/edit?usp=sharing)
+
